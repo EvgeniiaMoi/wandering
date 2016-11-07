@@ -12,12 +12,29 @@ h2{
 	font-size: 5rem;
 	text-align: center;
 	padding-top: 25px;
-	padding-bottom: 25px; 
+	padding-bottom: 25px;
 }
 
 .head-title a{
 	color: #F8565D;
 	text-decoration: none;
+    padding: 5px;
+    position: relative;
+}
+.head-title a:after {
+  content: "";
+  width: 0;
+  border-bottom: 3px solid #F8565D;
+  position: absolute;
+  left: 0;
+  transition: width 500ms;
+}
+.head-title a:hover:after {
+  width: 100%;
+}
+.head-title a:hover{
+    color: #F8565D;
+    text-decoration: none;
 }
 
 .menu{
@@ -99,42 +116,92 @@ h2{
 .big-banner{
 	background: url('img/big-banner.jpg');
 	background-size: cover;
-	background-position: bottom center;
+	background-position: top center;
+    background-attachment: fixed;
 	color: #ffffff;
-	padding-top: 25%;
-	padding-bottom: 15%;
+	height: 100vh;
+    position: relative;
 	text-align: center;
 }
 .big-banner .big-banner-content{
 	padding-bottom: 3%;
+    width: 750px;
+    height: 250px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    color: #F8565D;
+}
+.big-banner .big-banner-content h1{
+    font-size: 50px;
+    font-weight: 900;
+}
+.big-banner .big-banner-content p{
+    font-size: 20px;
 }
 .welcome-block{
 	color: #C0C0C0;
-	margin-top: 7%;
+	margin-top: 50px;
+}
+.welcome-block h2{
+    text-align: center;
+    color: #F8565D;
+}
+.welcome-block p.general-description{
+    text-align: center;
+}
+.welcome-block p.general-description:last-of-type{
+    margin-bottom: 30px;
+}
+.welcome-block .tabNavigation li{
+    list-style: none;
+    transition: background-color .5s;
+}
+.welcome-block .tabNavigation li a{
+    color: #C0C0C0;
+    transition: all .5s;
 }
 .welcome-block .icons{
     padding-left: 10%;
     padding-top: 4%;
 }
-.welcome-block .icons:hover{
-	color: #F8565D;
-	transition: color .5s;
+.welcome-block ul.tabNavigation .selected{
+    color: #000;
+}
+.welcome-block .tabNavigation li:hover{
+    background-color: #F8565D;
+}
+.welcome-block .tabNavigation li a:hover{
+	color: #fff;
 }
 .welcome-block h2{
 	margin-top: 5%;
 }
 .welcome-block h4{
 	margin-bottom: 5%;
-	color: #F8565D;
+	color: #000;
 }
 .welcome-block .img{
-	background: url('img/welcome.jpg');
 	background-size: cover;
-	background-position: bottom center;
     padding: 30%;
     margin-top: 2%;
 }
-
+#first .img{
+    background: url('img/welcome.jpg');
+    background-position: bottom center;
+    background-size: cover;
+}
+#second .img{
+    background: url('img/photo2.jpg');
+    background-position: center;
+}
+#third .img{
+    background: url('img/photo4.jpg');
+    background-position: center;
+}
 .information{
 	background-color: #F0F0F0;
     margin-bottom: 10%;
@@ -142,12 +209,6 @@ h2{
     padding-bottom: 3%;
     padding-top: 3%;
     color: #999999;
-}
-.information .wrapper-button{
-	border: 1px #CC3333 solid;
-	width: 25%;
-    padding: 2px;
-    text-align: center;
 }
 .separate-container{
 	position: relative;
@@ -160,19 +221,19 @@ h2{
     top: 5px;
     left: 34px;
 }
-.wrapper-button button{
+.information button{
 	border: 1px #CC3333 solid;
 	background-color: inherit;
-	padding-right: 18%;
-    padding-left: 18%;
+	padding-right: 10px;
+    padding-left: 10px;
+    transition: border-color .5s;
 }
-.information .wrapper-button:hover{
+.information button:hover{
 	border-color: #000000;
-	transition: border-color .5s;
+    outline: none;
 }
-.information .wrapper-button button:hover{
-	border-color: #000000;
-	transition: border-color .5s;
+.information button:focus{
+    outline: none;
 }
 .service{
 	text-align: center;
@@ -308,7 +369,7 @@ h2{
 }
 .gallery img{
 	width: 100%; 
-	height: auto;
+	height: 40vh;
 }
 .gallery .second-row-photos{
     margin-top: 3%;
@@ -386,4 +447,61 @@ footer a{
 footer a:hover{
 	color: #FFF6F7;
 	text-decoration: none;
+}
+@media (max-width: 1050px) {
+    .events-block .events button.slick-next.slick-arrow {
+        right: 0%;
+    }
+    .events-block .events button.slick-prev.slick-arrow {
+        left: 0;
+    }
+}
+@media (max-width: 950px) {
+    footer {
+        text-align: center;
+    }
+    .service .services{
+        margin-right: 10px;
+        padding: 0;
+        width: 210px;
+    }
+}
+@media (max-width: 450px) {
+    .menu {
+        width: 100%;
+        margin-left: 0;
+    }
+    .menu li {
+        margin-right: 15px;
+    }
+    .big-banner .big-banner-content {
+        width: 300px;
+    }
+    .big-banner .big-banner-content h1 {
+        font-size: 25px;
+    }
+    .big-banner .big-banner-content p {
+        font-size: 14px;
+    }
+    ul.tabNavigation {
+        padding-left: 0;
+    }
+    i.fa-3x {
+        font-size: 2em;
+    }
+    .col-md-1.col-xs-1.separate-container {
+        display: none;
+    }
+    .information div.col-xs-5 {
+        width: 100%;
+    }
+    .information div.col-xs-6 {
+        width: 100%;
+    }
+    .travels p{
+        font-size: 12px;
+    }
+    footer div.col-xs-6 {
+        width: 100%;
+    }
 }
