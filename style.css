@@ -5,8 +5,11 @@ body{
 header{
 	margin-bottom: 40px;
 }
-h2{
+section h2{
 	color: #F8565D;
+}
+section p{
+    color: #C0C0C0;
 }
 .head-title{
 	font-size: 5rem;
